@@ -24,7 +24,7 @@ var getMaxElement = function (arr) {
     }
   }
   return maxElement;
-}
+};
 
 window.renderStatistics = function (ctx, names, times) {
   renderCloud (ctx, CLOUD_X + GAP, CLOUD_Y + GAP, 'rgba(0, 0, 0, 0.7)');
@@ -49,5 +49,4 @@ window.renderStatistics = function (ctx, names, times) {
     names[i] == 'Вы' ? ctx.fillStyle = 'rgba(255, 0, 0, 1)' : ctx.fillStyle = 'hsl(240,' + Math.round(Math.random()*100)+ '%, 50%)';
     ctx.fillRect (CLOUD_X + CLOUD_PADDING + (BAR_GAP + BAR_WIDTH) * i, CLOUD_Y + LABEL_GAP + (maxHeight - barHeight), BAR_WIDTH, barHeight);
   }
-}
-
+};
