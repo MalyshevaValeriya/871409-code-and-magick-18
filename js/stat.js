@@ -61,6 +61,6 @@ window.renderStatistics = function (ctx, names, times) {
   var maxTime = getMaxElement(times);
 
   for (var i = 0; i < names.length; i++) {
-    renderColumn(ctx, names[i], times[i], maxTime, i)
-  };
+    renderColumn(ctx, names[i], times[i], maxTime, i);
+  }
 };
