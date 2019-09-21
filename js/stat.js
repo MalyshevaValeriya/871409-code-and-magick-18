@@ -27,7 +27,7 @@ var renderText = function (ctx, text, x, y) {
 
 var renderColor = function (names) {
   return names === 'Вы' ? 'rgba(255, 0, 0, 1)' : 'hsl(240,' + Math.round(Math.random() * 100) + '%, 50%)';
-}
+};
 
 var renderColumn = function (ctx, names, times, maxTime, i) {
   var barHeight = maxHeight * times / maxTime;
@@ -38,7 +38,7 @@ var renderColumn = function (ctx, names, times, maxTime, i) {
 
   ctx.fillStyle = renderColor(names);
   ctx.fillRect(x, CLOUD_Y + LABEL_GAP + (maxHeight - barHeight), BAR_WIDTH, barHeight);
-}
+};
 
 var getMaxElement = function (arr) {
   var maxElement = arr[0];
@@ -61,7 +61,6 @@ window.renderStatistics = function (ctx, names, times) {
   var maxTime = getMaxElement(times);
 
   for (var i = 0; i < names.length; i++) {
-    console.log(i);
     renderColumn(ctx, names[i], times[i], maxTime, i)
-  }
+  };
 };
