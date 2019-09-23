@@ -33,10 +33,8 @@ var createWizardArray = function () {
   return wizards;
 };
 
-var wizards = createWizardArray();
-
 var renderWizards = function () {
-
+  var wizards = createWizardArray();
   var similarListElement = userDialog.querySelector('.setup-similar-list');
   var similarWizardTemplate = document.querySelector('#similar-wizard-template').content;
   var fragment = document.createDocumentFragment();
