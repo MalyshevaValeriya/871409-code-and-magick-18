@@ -72,8 +72,6 @@ var renderWizards = function () {
 
 renderWizards();
 
-
-
 var onPopupEscPress = function (evt) {
   if (evt.keyCode === ESC_KEYCODE) {
     closePopup();
@@ -88,10 +86,6 @@ var openPopup = function () {
 var closePopup = function () {
   setup.classList.add('hidden');
   document.removeEventListener('keydown', onPopupEscPress);
-};
-
-var colorCoatChange = function () {
-  value = getRandomElement(COAT_COLOR);
 };
 
 setupOpen.addEventListener('click', function () {
