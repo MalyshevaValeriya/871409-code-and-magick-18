@@ -10,7 +10,6 @@ var ENTER_KEYCODE = 13;
 var setup = document.querySelector('.setup');
 var setupOpen = document.querySelector('.setup-open');
 var setupClose = document.querySelector('.setup-close');
-var userNameInput = setup.querySelector('.setup-user-name');
 var wizardCoatColor = document.querySelector('.setup-wizard .wizard-coat');
 var wizardCoatColorInput = document.querySelector('input[name=coat-color]');
 var wizardEyesColor = document.querySelector('.setup-wizard .wizard-eyes');
