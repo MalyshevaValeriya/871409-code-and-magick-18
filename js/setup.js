@@ -54,7 +54,7 @@ var renderWizard = function (wizard) {
   wizardElement.querySelector('.wizard-coat').style.fill = wizard.coatColor;
   wizardElement.querySelector('.wizard-eyes').style.fill = wizard.eyesColor;
   return wizardElement;
-}
+};
 
 var renderWizards = function () {
   var wizards = createWizardArray();
@@ -90,7 +90,7 @@ var closePopup = function () {
   document.removeEventListener('keydown', onPopupEscPress);
 };
 
-var colorChange = function () {
+var colorCoatChange = function () {
   value = getRandomElement(COAT_COLOR);
 };
 
@@ -101,7 +101,7 @@ setupOpen.addEventListener('click', function () {
 setupOpen.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     openPopup();
-  };
+  }
 });
 
 setupClose.addEventListener('click', function () {
@@ -111,27 +111,6 @@ setupClose.addEventListener('click', function () {
 setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     closePopup();
-  };
-});
-
-userNameInput.addEventListener('invalid', function (evt) {
-  if (userNameInput.validity.tooShort) {
-    userNameInput.setCustomValidity('Имя должно состоять минимум из 2-х символов');
-  } else if (userNameInput.validity.tooLong) {
-    userNameInput.setCustomValidity('Имя не должно превышать 25-ти символов');
-  } else if (userNameInput.validity.valueMissing) {
-    userNameInput.setCustomValidity('Обязательное поле');
-  } else {
-    userNameInput.setCustomValidity('');
-  }
-});
-
-userNameInput.addEventListener('input', function (evt) {
-  var target = evt.target;
-  if (target.value.length < 2) {
-    target.setCustomValidity('Имя должно состоять минимум из 2-х символов');
-  } else {
-    target.setCustomValidity('');
   }
 });
 
@@ -148,7 +127,7 @@ wizardCoatColor.addEventListener('click', function () {
 var onWizardEyesClick = function () {
   var eyesColor = getRandomElement(EYES_COLOR);
   wizardEyesColor.style.fill = eyesColor;
-  wizardEyesColorInput.value  = eyesColor;
+  wizardEyesColorInput.value = eyesColor;
 };
 
 wizardEyesColor.addEventListener('click', function () {
