@@ -10,12 +10,15 @@ var ENTER_KEYCODE = 13;
 var setup = document.querySelector('.setup');
 var setupOpen = document.querySelector('.setup-open');
 var setupClose = document.querySelector('.setup-close');
-var wizardCoatColor = document.querySelector('.setup-wizard .wizard-coat');
-var wizardCoatColorInput = document.querySelector('input[name=coat-color]');
-var wizardEyesColor = document.querySelector('.setup-wizard .wizard-eyes');
-var wizardEyesColorInput = document.querySelector('input[name=eyes-color]');
+var wizardElementsColor = document.querySelector('.setup-wizard');
+var wizardCoatColor = wizardElementsColor.querySelector('.wizard-coat');
+var wizardForm = document.querySelector('.setup-wizard-form');
+var wizardCoatColorInput = wizardForm.elements['coat-color'];
+var wizardEyesColor = wizardElementsColor.querySelector('.wizard-eyes');
+var wizardEyesColorInput = wizardForm.elements['eyes-color'];
 var fireballColor = document.querySelector('.setup-fireball-wrap');
-var fireballInput = document.querySelector('input[name=fireball-color]');
+var fireballInput = wizardForm.elements['fireball-color'];
+var wizardNameInput = wizardForm.elements['username'];
 
 var userDialog = document.querySelector('.setup');
 
@@ -72,7 +75,7 @@ var renderWizards = function () {
 renderWizards();
 
 var onPopupEscPress = function (evt) {
-  if (evt.keyCode === ESC_KEYCODE) {
+  if (evt.keyCode === ESC_KEYCODE && document.activeElement !== wizardNameInput) {
     closePopup();
   }
 };
