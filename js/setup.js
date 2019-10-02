@@ -75,10 +75,16 @@ var renderWizards = function () {
 renderWizards();
 
 var onPopupEscPress = function (evt) {
-  if (evt.keyCode === ESC_KEYCODE && document.activeElement !== wizardNameInput) {
+  if (evt.keyCode === ESC_KEYCODE) {
     closePopup();
   }
 };
+
+wizardNameInput.addEventListener('keydown', function (evt) {
+  if (evt.keyCode === ESC_KEYCODE) {
+    evt.stopPropagation();
+  }
+});
 
 var openPopup = function () {
   setup.classList.remove('hidden');
