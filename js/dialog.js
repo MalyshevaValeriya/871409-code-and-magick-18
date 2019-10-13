@@ -24,6 +24,8 @@
 
   var closePopup = function () {
     setup.classList.add('hidden');
+    setup.style.top = '';
+    setup.style.left = '';
     document.removeEventListener('keydown', onPopupEscPress);
   };
 
@@ -67,8 +69,27 @@
         y: moveEvt.clientY
       };
 
-      setup.style.top = (setup.offsetTop - shift.y) + 'px';
-      setup.style.left = (setup.offsetLeft - shift.x) + 'px';
+      var coordsTop = setup.offsetTop - shift.y;
+      var coordsLeft = setup.offsetLeft - shift.x;
+
+      if (coordsTop < setup.offsetParent.offsetTop) {
+        coordsTop = setup.offsetParent.offsetTop;
+      }
+
+      if (coordsTop > setup.offsetParent.offsetHeight) {
+        coordsTop = setup.offsetParent.offsetHeight;
+      }
+
+      if (coordsLeft < setup.offsetParent.offsetLeft + setup.offsetWidth / 2) {
+        coordsLeft = setup.offsetParent.offsetLeft + setup.offsetWidth / 2;
+      }
+
+      if (coordsLeft > setup.offsetParent.offsetWidth - setup.offsetWidth / 2) {
+        coordsLeft = setup.offsetParent.offsetWidth - setup.offsetWidth / 2;
+      }
+
+      setup.style.top = coordsTop + 'px';
+      setup.style.left = coordsLeft + 'px';
 
     };
 
