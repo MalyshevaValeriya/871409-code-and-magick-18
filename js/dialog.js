@@ -1,4 +1,3 @@
-/* eslint-disable no-shadow */
 'use strict';
 (function () {
   var setup = document.querySelector('.setup');
@@ -100,8 +99,8 @@
       document.removeEventListener('mouseup', onMouseUp);
 
       if (dragged) {
-        var onClickPreventDefault = function (evt) {
-          evt.preventDefault();
+        var onClickPreventDefault = function (evtClick) {
+          evtClick.preventDefault();
           dialogHandler.removeEventListener('click', onClickPreventDefault);
         };
         dialogHandler.addEventListener('click', onClickPreventDefault);
