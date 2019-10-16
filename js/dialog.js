@@ -1,10 +1,9 @@
 'use strict';
 (function () {
-  var setup = document.querySelector('.setup');
+  var setup = window.setup.userDialog;
   var setupOpen = document.querySelector('.setup-open');
   var setupClose = document.querySelector('.setup-close');
-  var wizardForm = document.querySelector('.setup-wizard-form');
-  var wizardNameInput = wizardForm.elements['username'];
+  var wizardNameInput = document.querySelector('input[name=username]');
   var dialogHandler = setup.querySelector('.upload');
 
   document.querySelector('.setup-similar').classList.remove('hidden');
