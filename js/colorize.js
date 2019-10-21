@@ -5,11 +5,12 @@
   var EYES_COLOR = ['black', 'red', 'blue', 'yellow', 'green'];
   var wizardElementsColor = document.querySelector('.setup-wizard');
   var wizardCoatColor = wizardElementsColor.querySelector('.wizard-coat');
-  var wizardCoatColorInput = document.querySelector('input[name=coat-color]');
+  var wizardForm = window.setup.wizardForm;
+  var wizardCoatColorInput = wizardForm.elements['coat-color'];
   var wizardEyesColor = wizardElementsColor.querySelector('.wizard-eyes');
-  var wizardEyesColorInput = document.querySelector('input[name=eyes-color]');
+  var wizardEyesColorInput = wizardForm.elements['eyes-color'];
   var fireballColor = document.querySelector('.setup-fireball-wrap');
-  var fireballInput = document.querySelector('input[name=fireball-color]');
+  var fireballInput = wizardForm.elements['fireball-color'];
 
 
   var onWizardCoatClick = function () {
